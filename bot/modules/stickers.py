@@ -415,18 +415,18 @@ def delsticker(update, context):
 @run_async
 def stickhelp(update, context):
     help_string = '''
-• `/stickerid`*:* Reply to a Sticker to me to tell you its file ID.
-• `/getsticker`*:* Reply to a Sticker to me to upload its raw PNG file.
-• `/kang`*:* Reply to a Sticker to add it to your pack.
-• `/remove`*:* Replay to a Sticker to remove Sticker from an existing pack.
+• `/stcrid`*:* Reply to a Sticker to me to tell you its file ID.
+• `/getstcr`*:* Reply to a Sticker to me to upload its raw PNG file.
+• `/steal`*:* Reply to a Sticker to add it to your pack.
+• `/removestcr`*:* Replay to a Sticker to remove Sticker from an existing pack.
 '''
     update.effective_message.reply_photo(IMAGE_URL, help_string, parse_mode=ParseMode.MARKDOWN)
 
-STICKERID_HANDLER = CommandHandler("stickerid", stickerid)
-GETSTICKER_HANDLER = CommandHandler("getsticker", getsticker)
-KANG_HANDLER = CommandHandler("kang", kang)
-DEL_HANDLER = CommandHandler("remove", delsticker)
-STICKHELP_HANDLER = CommandHandler("stickerhelp", stickhelp)
+STICKERID_HANDLER = CommandHandler("stcrid", stickerid)
+GETSTICKER_HANDLER = CommandHandler("getstcr", getsticker)
+KANG_HANDLER = CommandHandler("steal", kang)
+DEL_HANDLER = CommandHandler("removestcr", delsticker)
+STICKHELP_HANDLER = CommandHandler("stcrhelp", stickhelp)
 
 
 dispatcher.add_handler(STICKERID_HANDLER)
